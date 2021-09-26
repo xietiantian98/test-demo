@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>测试代码</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script src="C:\Users\msi\Desktop\test-demo\javascript.js"></script>
+    <!-- <link rel="stylesheet" href="style.css" />
+    <script src="C:\Users\msi\Desktop\test-demo\javascript.js"></script> -->
 </head>
+
 <body>
-   <div class="box">这是测试代码</div> 
-   D:\programFiles\Git\bin
+    <!-- <div class="box">这是测试代码</div> 
+   D:\programFiles\Git\bingit pull --rebase origin master -->
+    <button onclick='longestCommonPrefix(["flower","flower","flower","flower"])'></button>
+    <script>
+        var longestCommonPrefix = function (strs) {
+            if(strs[0] == "" || strs.length == 0){
+        return ""
+    }
+     if(strs.length < 2){
+                return strs.toString()
+            }
+     let arr = ""
+            let len = strs[0].length
+            for (let j = 0; j < len; j++) {
+                for (let i = 0; i < strs.length-1; i++) {
+                    if (strs[i][j] != strs[i + 1][j]) {
+                        return arr
+                    }
+                }
+                arr = arr.concat(strs[0][j])
+               
+                
+
+            }
+            return arr
+        };
+    </script>
 </body>
+
 </html>
