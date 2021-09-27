@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试代码</title>
+</head>
+
+<body>
+    <button onclick='isValid("()[]{}")'></button>
+    <script>
+        var isValid = function (s) {
+            let len = s.length
+
+            // if(len = 2 && s[0] == '(' && s[1] == ')' || s[0] == '{' && s[1] == '}' || s[0] == '[' && s[1] == ']'){
+            //     return true
+            // }
+            // if(!(len = 2 && s[0] == '(' && s[1] == ')' || s[0] == '{' && s[1] == '}' || s[0] == '[' && s[1] == ']')){
+            //     return false
+            // }
+            if (len == 1) {
+                return false
+            }
+            if (len == 2) {
+                if (s[0] == '(' && s[1] == ')' || s[0] == '{' && s[1] == '}' || s[0] == '[' && s[1] == ']') {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            // for (let i = 0, j = len - 1; i < len;){
+            //     if (s[i] == '(' && s[i + 1] == ')' || s[i] == '{' && s[i + 1] == '}' || s[i] == '[' && s[i + 1] == ']') {
+            //          i += 2
+            //     }
+            // }
+            for (let i = 0, j = len - 1; i < len;) {
+                if (s[i] == '(' && s[i + 1] == ')' || s[i] == '{' && s[i + 1] == '}' || s[i] == '[' && s[i + 1] == ']') {
+                    i += 2
+                    continue
+                }
+                for(let i = 0,j=len-1;i<len-2;){
+                    if (s[i] == '(' && s[j] == ')' || s[i] == '{' && s[j] == '}' || s[i] == '[' && s[j] == ']') {
+                        i++
+                        j--
+                    }else {
+                    return false
+                }
+                }
+                return true
+                // else if (i < len - 2) {
+                //     if (s[i] == '(' && s[j] == ')' || s[i] == '{' && s[j] == '}' || s[i] == '[' && s[j] == ']') {
+                //         i++
+                //         j--
+                //     }else {
+                //     return false
+                // }
+                // } 
+
+            }
+            // return true
+
+        };
+    </script>
+</body>
+
+</html>
